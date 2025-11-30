@@ -102,6 +102,12 @@ export default function Footer() {
               mb: 1,
               "&:hover": { color: theme.palette.text.primary },
             }}
+            onClick={() => {
+              window.open(
+                "https://www.linkedin.com/in/gabriel-gabor-123456789/",
+                "_blank"
+              );
+            }}
           >
             Linkedin
           </Typography>
@@ -113,6 +119,9 @@ export default function Footer() {
               mb: 1,
               "&:hover": { color: theme.palette.text.primary },
             }}
+            onClick={() => {
+              window.open("https://github.com/gaboruuu", "_blank");
+            }}
           >
             GitHub
           </Typography>
@@ -123,6 +132,9 @@ export default function Footer() {
               cursor: "pointer",
               mb: 1,
               "&:hover": { color: theme.palette.text.primary },
+            }}
+            onClick={() => {
+              window.location.href = "mailto:gabriel.gabor2016@gmail.com";
             }}
           >
             Email

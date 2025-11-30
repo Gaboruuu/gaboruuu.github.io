@@ -1,12 +1,20 @@
-import { AppBar, Toolbar, Box, Button } from "@mui/material";
+import { AppBar, Toolbar, Box, Button, useMediaQuery } from "@mui/material";
 import { Link } from "react-router-dom";
 import theme from "../theme";
-
+import HomeIcon from "@mui/icons-material/Home";
+import WorkIcon from "@mui/icons-material/Work";
+import EmailIcon from "@mui/icons-material/Email";
 const Header = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
   const pages = [
-    { name: "Home", path: "/" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", icon: <HomeIcon /> },
+    { name: "Projects", path: "/projects", icon: <WorkIcon /> },
+    {
+      name: "Contact",
+      path: "mailto:gabriel.gabor2016@gmail.com",
+      isExternal: true,
+      icon: <EmailIcon />,
+    },
   ];
 
   return (
@@ -20,7 +28,7 @@ const Header = () => {
         justifyContent: "center",
         boxShadow: "none",
         borderBottom: `1px solid ${theme.palette.divider}`,
-        maxWidth: "320px",
+        maxWidth: { xs: 200, sm: 320, md: 320, lg: 320 },
         maxHeight: "40px",
         alignItems: "center",
         left: 0,
@@ -37,12 +45,13 @@ const Header = () => {
       }}
     >
       <Toolbar sx={{ justifyContent: "center" }}>
-        <Box sx={{ display: "flex", gap: 3 }}>
+        <Box sx={{ display: "flex", gap: { xs: 0, sm: 3 } }}>
           {pages.map((page) => (
             <Button
               key={page.name}
-              component={Link}
-              to={page.path}
+              component={page.isExternal ? "a" : Link}
+              to={page.isExternal ? undefined : page.path}
+              href={page.isExternal ? page.path : undefined}
               sx={{
                 color: "#fff",
                 fontSize: "1rem",
@@ -53,9 +62,12 @@ const Header = () => {
                 },
                 transition: "all 0.3s ease",
               }}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() =>
+                !page.isExternal &&
+                window.scrollTo({ top: 0, behavior: "smooth" })
+              }
             >
-              {page.name}
+              {isMobile ? page.icon : page.name}
             </Button>
           ))}
         </Box>

@@ -250,6 +250,8 @@ export default function Home() {
             }}
           >
             <Button
+              component="a"
+              href="mailto:gabriel.gabor2016@gmail.com"
               variant="outlined"
               sx={{
                 color: "#fff",

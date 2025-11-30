@@ -57,7 +57,7 @@ const projectsData = [
     link: "/projects/battle-ship",
     title: "Battle Ship",
     descriptionShort: "A classic Battleship game implemented in Python.",
-    descriptionLong: "",
+    descriptionLong: [],
     technologies: ["Python", "Pygame"],
     thumbnail: placeholderImg,
     images: ["/images/portfolio1.png", "/images/portfolio2.png"],
@@ -73,7 +73,7 @@ const projectsData = [
     title: "Local Movie QT",
     descriptionShort:
       "An C++/Qt application for managing a local movie collection.",
-    descriptionLong: "",
+    descriptionLong: [],
     technologies: ["C++", "Qt"],
     thumbnail: placeholderImg,
     images: ["/images/portfolio1.png", "/images/portfolio2.png"],
