@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { AppBar, Toolbar, Box, Button } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import theme from "../theme";
 
 const Header = () => {

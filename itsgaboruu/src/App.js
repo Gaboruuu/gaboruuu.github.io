@@ -8,12 +8,13 @@ import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
 import Contact from "./pages/Contact";
 import ParticleBackground from "./components/ParticleBackground";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Box
           sx={{
             minHeight: "100vh",
@@ -34,6 +35,17 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
               </Routes>
             </Box>
+          </Box>
+          <Box
+            sx={{
+              maxWidth: "1000px",
+              margin: "0 auto",
+              px: 2,
+              mt: 8,
+              mb: 2,
+            }}
+          >
+            <Footer />
           </Box>
         </Box>
       </Router>

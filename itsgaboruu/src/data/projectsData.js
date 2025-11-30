@@ -1,5 +1,5 @@
-import { keyframes } from "@emotion/react";
 import placeholderImg from "../assets/images/placeholder.png";
+import projectvault_thumbnail from "../assets/images/projects/projectvault_thumbnail_dark.png";
 
 const projectsData = [
   {
@@ -8,10 +8,11 @@ const projectsData = [
     title: "Portfolio Website",
     descriptionShort:
       "A personal portfolio website to showcase my projects and skills.",
-    descriptionLong:
+    descriptionLong: [
       "This portfolio website is built using React and Material-UI. It features a dark theme, responsive design, and smooth animations to provide an engaging user experience. The site includes sections for my projects, skills, and contact information.",
+    ],
     technologies: ["React", "Material-UI", "JavaScript", "CSS"],
-    thumbnail: placeholderImg,
+    thumbnail: projectvault_thumbnail,
     keyFeatures: [
       "Responsive design for all devices",
       "Dark and light theme toggle",
@@ -28,15 +29,28 @@ const projectsData = [
     title: "Hourglass",
     descriptionShort:
       "An advanced time-tracking application designed for gatcha games events.",
-    descriptionLong: "",
-    technologies: ["React Native", "JavaScript"],
+    descriptionLong: [
+      "Hourglass is a mobile application developed using React Native that helps users track time-limited events in gatcha games. It features customizable timers, notifications, and an intuitive user interface to ensure players never miss important in-game events.",
+      "The app allows users to set multiple timers for different events, view countdowns, and receive alerts when events are about to start or end. It is designed to be lightweight and efficient, making it perfect for gamers on the go.",
+    ],
+    technologies: ["React Native", "TypeScript", "MySQL"],
     thumbnail: placeholderImg,
     images: ["/images/portfolio1.png", "/images/portfolio2.png"],
     githubUrl: "https://github.com/Gaboruuu/Hourglass",
     liveUrl: "",
     featured: true,
     category: "mobile",
-    keyFeatures: [],
+    keyFeatures: [
+      "Customizable timers",
+      "Push notifications",
+      "User-friendly interface",
+      "Time zone support",
+      "Lightweight and efficient",
+      "Offline functionality",
+      "Event history tracking",
+      "Theme customization",
+      "Filtering and sorting of events",
+    ],
   },
   {
     id: 3,

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardMedia,
@@ -17,7 +16,6 @@ const variantStyles = {
     height: 350,
     "&:hover": {
       transform: "translateY(-8px)",
-      boxShadow: `0 12px 40px ${theme.palette.primary.main}60`,
       transition: "all 0.3s ease",
     },
   },
@@ -25,10 +23,6 @@ const variantStyles = {
     background: "rgba(27, 27, 27, 0.5)",
     border: "1px solid rgba(255, 255, 255, 0.5)",
     height: 300,
-    "&:hover": {
-      transform: "translateY(-10px)",
-      transition: "all 0.3s ease",
-    },
   },
 };
 
@@ -39,11 +33,13 @@ export default function ProjectCard({ project, variant = "default", sx }) {
         // Base styles (common to all variants)
         backdropFilter: "blur(10px)",
         maxWidth: 400,
+        width: "100%",
         borderRadius: 3,
         boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
         display: "flex",
         flexDirection: "column",
         cursor: "pointer",
+        p: variant === "featured" ? 1 : 0,
 
         // Variant-specific styles
         ...variantStyles[variant],
@@ -57,18 +53,29 @@ export default function ProjectCard({ project, variant = "default", sx }) {
         window.location.href = project.link;
       }}
     >
-      <CardMedia
-        component="img"
-        image={project.thumbnail}
-        alt="Project thumbnail"
+      <Box
         sx={{
-          height: variant === "featured" ? "80%" : "55%",
-          objectFit: "cover",
-          p: variant === "featured" ? 1.5 : 0,
-          borderRadius: variant === "featured" ? 7 : 0,
-          "&:hover": {},
+          height: variant === "featured" ? "70%" : "55%",
+          overflow: "hidden",
+          p: 0,
+          borderRadius: variant === "featured" ? 3 : 0,
         }}
-      />
+      >
+        <CardMedia
+          component="img"
+          image={project.thumbnail}
+          alt="Project thumbnail"
+          sx={{
+            height: "100%",
+            width: "100%",
+            objectFit: "cover",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "scale(1.1)",
+            },
+          }}
+        />
+      </Box>
       <CardContent
         sx={{
           flexGrow: variant === "featured" ? 0 : 1,

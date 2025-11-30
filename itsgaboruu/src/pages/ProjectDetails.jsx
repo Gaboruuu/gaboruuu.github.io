@@ -1,10 +1,17 @@
 import React from "react";
-import { Box, Typography, Dialog, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Dialog,
+  IconButton,
+  Button,
+  Paper,
+} from "@mui/material";
 import { useParams } from "react-router-dom";
 import projectsData from "../data/projectsData";
 import theme from "../theme";
 import { useState } from "react";
-import { Close } from "@mui/icons-material";
+import { Close, CheckCircle } from "@mui/icons-material";
 
 function ProjectDetails() {
   const params = useParams();
@@ -58,19 +65,26 @@ function ProjectDetails() {
                 mt: 2,
                 gap: 3,
                 display: "flex",
+                flexDirection: { xs: "column", md: "row" },
               }}
             >
-              <Typography variant="body2" sx={{ mt: 2 }}>
-                {project.descriptionLong}
-              </Typography>
-              <img
+              <Box sx={{ flex: 1 }}>
+                {project.descriptionLong.map((para, index) => (
+                  <Typography key={index} variant="body2" sx={{ mt: 2 }}>
+                    {para}
+                  </Typography>
+                ))}
+              </Box>
+
+              <Box
+                component="img"
                 src={project.thumbnail}
                 alt={`${project.title} thumbnail`}
-                style={{
-                  maxWidth: "45%",
+                sx={{
+                  maxWidth: { xs: "100%", md: "400px" },
                   height: "auto",
-                  borderRadius: 8,
-                  marginTop: 16,
+                  borderRadius: 1,
+                  mt: 2,
                 }}
               />
             </Box>
@@ -116,11 +130,46 @@ function ProjectDetails() {
             >
               Key Features
             </Typography>
-            <Box sx={{ textAlign: "start", mt: 2 }}>
+            <Box
+              sx={{
+                mt: 2,
+                display: "grid",
+                gridTemplateColumns: {
+                  xs: "1fr",
+                  sm: "repeat(auto-fill, minmax(250px, 1fr))",
+                },
+                gap: 2,
+              }}
+            >
               {project.keyFeatures.map((feature, index) => (
-                <Typography key={index} variant="body2" sx={{ mb: 1 }}>
-                  • {feature}
-                </Typography>
+                <Paper
+                  key={index}
+                  elevation={2}
+                  sx={{
+                    p: 2,
+                    display: "flex",
+                    alignItems: "flex-start",
+                    bgcolor: "rgba(0, 0, 0, 0.05)",
+                    gap: 1.5,
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "translateY(-4px)",
+                      boxShadow: 4,
+                    },
+                  }}
+                >
+                  <CheckCircle
+                    sx={{
+                      color: theme.palette.primary.main,
+                      fontSize: 20,
+                      mt: 0.25,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <Typography variant="body2" sx={{ flex: 1 }}>
+                    {feature}
+                  </Typography>
+                </Paper>
               ))}
             </Box>
           </Box>
@@ -165,10 +214,36 @@ function ProjectDetails() {
           </Box>
 
           {/* Links */}
-          <Box></Box>
+          <Box sx={{ py: 8, px: 2 }}>
+            <Typography variant="h6" gutterBottom color="textSecondary">
+              Links
+            </Typography>
+            <Box>
+              {project.githubUrl && (
+                <Button
+                  variant="outlined"
+                  sx={{
+                    mr: 2,
+                    mb: 2,
+                    "&:hover": {
+                      scale: 1.05,
+                    },
+                    transition: "all 0.3s ease",
+                  }}
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </Button>
+              )}
+            </Box>
+          </Box>
         </Box>
       ) : (
-        <Typography variant="h6">Project not found.</Typography>
+        <Typography variant="h6">
+          Project not found or not available.
+        </Typography>
       )}
 
       {/* Fullscreen Image Dialog */}

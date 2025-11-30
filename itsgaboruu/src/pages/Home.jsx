@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  colors,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 import { useRef } from "react";
 import Aurora from "../components/Aurora";
 import AnimatedGradientText from "../components/AnimatedGradientText";
@@ -34,6 +27,7 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { TbSql, TbBrandCSharp } from "react-icons/tb";
+import Footer from "../components/Footer";
 
 const skillsData = [
   // Programming Languages
@@ -289,7 +283,7 @@ export default function Home() {
         </Box>
       </Box>
       {/* Projects Section */}
-      <Box ref={projectsRef} sx={{ margin: "0 auto", py: 8, px: 4 }}>
+      <Box ref={projectsRef} sx={{ margin: "0 auto", py: 8, px: 2 }}>
         <AnimatedGradientText
           variant="h3"
           colors={{ start: "#8800ffff", middle: "#7461b3ff", end: "#8800ffff" }}

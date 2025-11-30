@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import AnimatedGradientText from "./AnimatedGradientText";
+import { Box } from "@mui/material";
 import ProjectCard from "./ProjectCard";
 import projectsData from "../data/projectsData";
 
@@ -15,12 +14,11 @@ export default function ProjectsSection({
     <Box
       sx={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
         gap: 2,
         padding: 4,
         margin: "0 auto",
-        alignItems: "center",
-        justifyContent: "center",
+        justifyItems: "center",
         ...sx,
       }}
     >
