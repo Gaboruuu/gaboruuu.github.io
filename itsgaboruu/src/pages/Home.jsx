@@ -152,7 +152,7 @@ export default function Home() {
                 color: "#fff",
                 textTransform: "uppercase",
                 fontFamily: "Arial Black",
-                fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
+                fontSize: { xs: "40px", sm: "3.5rem", md: "72px" },
               }}
             >
               Software developer
@@ -172,7 +172,7 @@ export default function Home() {
                   color: theme.palette.primary.main,
                   textTransform: "uppercase",
                   fontFamily: "Arial Black",
-                  fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
+                  fontSize: { xs: "40px", sm: "56px", md: "72px" },
                 }}
               >
                 Student
@@ -245,6 +245,8 @@ export default function Home() {
             sx={{
               display: "flex",
               gap: 2,
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: "center",
               justifyContent: "center",
               mt: 3,
             }}
