@@ -370,6 +370,9 @@ export default function Home() {
                   : "translateY(20px)",
                 opacity: areSkillsVisible ? 1 : 0,
                 transition: `all 0.5s ease ${index * 0.1}s`,
+                "@media (max-width: 600px)": {
+                  transition: `all 0.1s ease ${index * 0.1}s`,
+                },
               }}
             >
               <CardContent sx={{ textAlign: "center" }}>

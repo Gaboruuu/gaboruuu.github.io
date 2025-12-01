@@ -4,18 +4,21 @@ import projectvault_thumbnail from "../assets/images/projects/projectvault_thumb
 const projectsData = [
   {
     id: 1,
-    link: "/projects/portfolio-website",
-    title: "Portfolio Website",
+    link: "/projects/project-vault",
+    title: "Project Vault",
     descriptionShort:
-      "A personal portfolio website to showcase my projects and skills.",
+      "A early verion of a personal portfolio website to showcase my projects and skills.",
     descriptionLong: [
-      "This portfolio website is built using React and Material-UI. It features a dark theme, responsive design, and smooth animations to provide an engaging user experience. The site includes sections for my projects, skills, and contact information.",
+      "Project Vault is the early version of my personal portfolio website designed to showcase my projects, skills, and experience as a developer. The website features a clean and modern design, with easy navigation and responsive layout to ensure optimal viewing on all devices.",
+      "Its initial purpose was to familiarize myself with React and Material-UI, while also providing a platform to present my work to potential employers and collaborators.",
+      "It later only served as a foundation for the current website you are browsing right now.",
     ],
     technologies: ["React", "Material-UI", "JavaScript", "CSS"],
     thumbnail: projectvault_thumbnail,
     keyFeatures: [
       "Responsive design for all devices",
-      "Dark and light theme toggle",
+      "Clean and modern UI",
+      "Project showcase",
     ],
     images: [placeholderImg, placeholderImg, placeholderImg, placeholderImg],
     githubUrl: "https://github.com/Gaboruuu/Project-Vault-Redesign",
@@ -32,6 +35,7 @@ const projectsData = [
     descriptionLong: [
       "Hourglass is a mobile application developed using React Native that helps users track time-limited events in gatcha games. It features customizable timers, notifications, and an intuitive user interface to ensure players never miss important in-game events.",
       "The app allows users to set multiple timers for different events, view countdowns, and receive alerts when events are about to start or end. It is designed to be lightweight and efficient, making it perfect for gamers on the go.",
+      "By far my most complex application, it helped me to improve my skills in React Native and TypeScript development.",
     ],
     technologies: ["React Native", "TypeScript", "MySQL"],
     thumbnail: placeholderImg,
@@ -50,6 +54,7 @@ const projectsData = [
       "Event history tracking",
       "Theme customization",
       "Filtering and sorting of events",
+      "Cross-platform compatibility (iOS and Android)",
     ],
   },
   {
@@ -57,7 +62,12 @@ const projectsData = [
     link: "/projects/battle-ship",
     title: "Battle Ship",
     descriptionShort: "A classic Battleship game implemented in Python.",
-    descriptionLong: [],
+    descriptionLong: [
+      "This is a console-based implementation of the classic Battleship game using Python and Pygame",
+      "The game features a graphical interface created with Pygame, allowing players to place their ships and make guesses on a grid.",
+      "The player can customize the number and size of the ships as well as the board size",
+      "The game is played agains a simple implemented AI.",
+    ],
     technologies: ["Python", "Pygame"],
     thumbnail: placeholderImg,
     images: ["/images/portfolio1.png", "/images/portfolio2.png"],
@@ -65,7 +75,13 @@ const projectsData = [
     liveUrl: "",
     featured: false,
     category: "python",
-    keyFeatures: [],
+    keyFeatures: [
+      "Single-player mode",
+      "AI opponent",
+      "Graphical interface",
+      "Console interface",
+      "Customizable game settings",
+    ],
   },
   {
     id: 4,
@@ -73,7 +89,11 @@ const projectsData = [
     title: "Local Movie QT",
     descriptionShort:
       "An C++/Qt application for managing a local movie collection.",
-    descriptionLong: [],
+    descriptionLong: [
+      "Local Movie QT is a desktop application developed using C++ and the Qt framework that simulate a simple local movie database manager.",
+      "The app in devided into two main sections: admin and user section. The admin section allows users to add, edit, and delete movie entries, while the user section enables users to browse, add to watchlist, and rate movies as well as play the trailers.",
+      "While the application is functional, it is primarily a learning project to enhance my skills in C++ and Qt development.",
+    ],
     technologies: ["C++", "Qt"],
     thumbnail: placeholderImg,
     images: ["/images/portfolio1.png", "/images/portfolio2.png"],
@@ -81,7 +101,16 @@ const projectsData = [
     liveUrl: "",
     featured: true,
     category: "QT",
-    keyFeatures: [],
+    keyFeatures: [
+      "Admin and user sections",
+      "Movie management (add, edit, delete)",
+      "Watchlist functionality",
+      "Movie rating system",
+      "Trailer playback",
+      "Lightweight and efficient",
+      "Export movie list to CSV and HTML",
+      "Search and filter movies",
+    ],
   },
 ];
 
