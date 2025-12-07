@@ -1,7 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.1259a74c.css",
-    "main.js": "/static/js/main.cf2204d7.js",
+    "main.js": "/static/js/main.e0aff0b2.js",
+    "static/media/hourglass_4.png": "/static/media/hourglass_4.9caa7fb7598189ebc83b.png",
+    "static/media/hourglass_1.png": "/static/media/hourglass_1.f000c9de6576920115cb.png",
+    "static/media/hourglass_3.png": "/static/media/hourglass_3.c7be8d1002c6aa007daf.png",
+    "static/media/hourglass_2.png": "/static/media/hourglass_2.3efe3dca5dc821677104.png",
+    "static/media/hourglass_thumbnail.png": "/static/media/hourglass_thumbnail.e973a319532257f7f0cc.png",
     "static/media/projectvault_thumbnail_dark.png": "/static/media/projectvault_thumbnail_dark.03df6bb2736ce2288aa2.png",
     "static/media/rs.svg": "/static/media/rs.099fd9d4031b066a2362.svg",
     "static/media/sh-ac.svg": "/static/media/sh-ac.12e47249c910761e397d.svg",
@@ -277,10 +282,10 @@
     "static/media/pe.svg": "/static/media/pe.d64e9732fcaa8f765994.svg",
     "static/media/id.svg": "/static/media/id.f624e2c8444a7794b357.svg",
     "main.1259a74c.css.map": "/static/css/main.1259a74c.css.map",
-    "main.cf2204d7.js.map": "/static/js/main.cf2204d7.js.map"
+    "main.e0aff0b2.js.map": "/static/js/main.e0aff0b2.js.map"
   },
   "entrypoints": [
     "static/css/main.1259a74c.css",
-    "static/js/main.cf2204d7.js"
+    "static/js/main.e0aff0b2.js"
   ]
 }
