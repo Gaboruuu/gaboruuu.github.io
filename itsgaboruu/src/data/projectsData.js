@@ -1,5 +1,10 @@
 import placeholderImg from "../assets/images/placeholder.png";
 import projectvault_thumbnail from "../assets/images/projects/projectvault_thumbnail_dark.png";
+import hourglass_thumbnail from "../assets/images/projects/hourglass_thumbnail.png";
+import hourglass_1 from "../assets/images/projects/hourglass_1.png";
+import hourglass_2 from "../assets/images/projects/hourglass_2.png";
+import hourglass_3 from "../assets/images/projects/hourglass_3.png";
+import hourglass_4 from "../assets/images/projects/hourglass_4.png";
 
 const projectsData = [
   {
@@ -38,8 +43,8 @@ const projectsData = [
       "By far my most complex application, it helped me to improve my skills in React Native and TypeScript development.",
     ],
     technologies: ["React Native", "TypeScript", "MySQL"],
-    thumbnail: placeholderImg,
-    images: ["/images/portfolio1.png", "/images/portfolio2.png"],
+    thumbnail: hourglass_thumbnail,
+    images: [hourglass_1, hourglass_2, hourglass_3, hourglass_4],
     githubUrl: "https://github.com/Gaboruuu/Hourglass",
     liveUrl: "",
     featured: true,

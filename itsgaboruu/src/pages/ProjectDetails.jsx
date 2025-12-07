@@ -10,24 +10,53 @@ import {
 import { useParams } from "react-router-dom";
 import projectsData from "../data/projectsData";
 import theme from "../theme";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Close, CheckCircle } from "@mui/icons-material";
 
 function ProjectDetails() {
   const params = useParams();
   const project = projectsData.find((p) => p.link === `/projects/${params.id}`);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [areProjectsVisible, setAreProjectsVisible] = useState(false);
-  React.useEffect(() => {
-    setAreProjectsVisible(true);
-  }, []);
+
+  // Scroll animation hook
+  const useScrollAnimation = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, []);
+    return [ref, isVisible];
+  };
+
+  const [titleRef, isTitleVisible] = useScrollAnimation();
+  const [descriptionRef, isDescriptionVisible] = useScrollAnimation();
+  const [techRef, isTechVisible] = useScrollAnimation();
+  const [featuresRef, areFeaturesVisible] = useScrollAnimation();
+  const [galleryRef, isGalleryVisible] = useScrollAnimation();
+  const [linksRef, areLinksVisible] = useScrollAnimation();
 
   return (
     <Box sx={{ p: 4 }}>
       {project ? (
         <Box sx={{ maxWidth: 800, margin: "0 auto" }}>
           {/* Project Title */}
-          <Box sx={{ mb: 4, textAlign: "center", pt: 15 }}>
+          <Box ref={titleRef} sx={{ mb: 4, textAlign: "center", pt: 15 }}>
             <Typography
               variant="h3"
               gutterBottom
@@ -35,27 +64,43 @@ function ProjectDetails() {
                 color: theme.palette.text.primary,
                 fontWeight: "bold",
                 fontFamily: "Arial Black",
-                transform: areProjectsVisible
+                transform: isTitleVisible
                   ? "translateY(0)"
                   : "translateY(-20px)",
-                opacity: areProjectsVisible ? 1 : 0,
-                transition: "all 0.5s ease",
-                color: theme.palette.text.primary,
+                opacity: isTitleVisible ? 1 : 0,
+                transition: "all 0.8s ease",
               }}
             >
               {project.title}
             </Typography>
-            <Typography variant="body1" color="textSecondary">
+            <Typography
+              variant="body1"
+              color="textSecondary"
+              sx={{
+                transform: isTitleVisible
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                opacity: isTitleVisible ? 1 : 0,
+                transition: "all 0.8s ease 0.2s",
+              }}
+            >
               {project.descriptionShort}
             </Typography>
           </Box>
 
           {/* Project Description + thumbnail (right)*/}
-          <Box sx={{ px: 2, py: 8 }}>
+          <Box ref={descriptionRef} sx={{ px: 2, py: 8 }}>
             <Typography
               variant="h6"
               color="textSecondary"
-              sx={{ textAlign: "start" }}
+              sx={{
+                textAlign: "start",
+                transform: isDescriptionVisible
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                opacity: isDescriptionVisible ? 1 : 0,
+                transition: "all 0.8s ease",
+              }}
             >
               What is this project about?
             </Typography>
@@ -66,6 +111,11 @@ function ProjectDetails() {
                 gap: 3,
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
+                transform: isDescriptionVisible
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                opacity: isDescriptionVisible ? 1 : 0,
+                transition: "all 0.8s ease 0.2s",
               }}
             >
               <Box sx={{ flex: 1 }}>
@@ -85,22 +135,39 @@ function ProjectDetails() {
                   height: "auto",
                   borderRadius: 1,
                   mt: 2,
+                  objectFit: "cover",
+                  border: `2px solid ${theme.palette.primary.main}`,
                 }}
               />
             </Box>
           </Box>
 
           {/* Technologies used */}
-          <Box sx={{ py: 8, px: 2 }}>
+          <Box ref={techRef} sx={{ py: 8, px: 2 }}>
             <Typography
               variant="h6"
               gutterBottom
               color="textSecondary"
-              sx={{ textAlign: "start", mb: 2 }}
+              sx={{
+                textAlign: "start",
+                mb: 2,
+                transform: isTechVisible ? "translateY(0)" : "translateY(20px)",
+                opacity: isTechVisible ? 1 : 0,
+                transition: "all 0.8s ease",
+              }}
             >
               Technologies Used
             </Typography>
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 1,
+                transform: isTechVisible ? "translateY(0)" : "translateY(20px)",
+                opacity: isTechVisible ? 1 : 0,
+                transition: "all 0.8s ease 0.2s",
+              }}
+            >
               {project.technologies.map((tech, index) => (
                 <Box
                   key={index}
@@ -121,12 +188,21 @@ function ProjectDetails() {
           </Box>
 
           {/* Key Features */}
-          <Box sx={{ py: 8, px: 2 }}>
+          <Box ref={featuresRef} sx={{ py: 8, px: 2 }}>
             <Typography
               variant="h6"
               gutterBottom
               color="textSecondary"
-              sx={{ textAlign: "start", mb: 2, mt: 4 }}
+              sx={{
+                textAlign: "start",
+                mb: 2,
+                mt: 4,
+                transform: areFeaturesVisible
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                opacity: areFeaturesVisible ? 1 : 0,
+                transition: "all 0.8s ease",
+              }}
             >
               Key Features
             </Typography>
@@ -151,7 +227,13 @@ function ProjectDetails() {
                     alignItems: "flex-start",
                     bgcolor: "rgba(0, 0, 0, 0.05)",
                     gap: 1.5,
-                    transition: "all 0.3s ease",
+                    transform: areFeaturesVisible
+                      ? "translateY(0) scale(1)"
+                      : "translateY(20px) scale(0.9)",
+                    opacity: areFeaturesVisible ? 1 : 0,
+                    transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${
+                      index * 0.1 + 0.2
+                    }s`,
                     "&:hover": {
                       transform: "translateY(-4px)",
                       boxShadow: 4,
@@ -175,12 +257,20 @@ function ProjectDetails() {
           </Box>
 
           {/* Gallery / Screenshots */}
-          <Box sx={{ py: 8, px: 2 }}>
+          <Box ref={galleryRef} sx={{ py: 8, px: 2 }}>
             <Typography
               variant="h6"
               gutterBottom
               color="textSecondary"
-              sx={{ textAlign: "start", mb: 2 }}
+              sx={{
+                textAlign: "start",
+                mb: 2,
+                transform: isGalleryVisible
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                opacity: isGalleryVisible ? 1 : 0,
+                transition: "all 0.8s ease",
+              }}
             >
               Gallery / Screenshots
             </Typography>
@@ -202,7 +292,9 @@ function ProjectDetails() {
                     width: "calc(50% - 16px)",
                     borderRadius: 8,
                     cursor: "pointer",
-                    transition: "transform 0.2s ease",
+                    transform: isGalleryVisible ? "scale(1)" : "scale(0.9)",
+                    opacity: isGalleryVisible ? 1 : 0,
+                    transition: `all 0.5s ease ${index * 0.1 + 0.2}s`,
                   }}
                   onMouseEnter={(e) =>
                     (e.target.style.transform = "scale(1.02)")
@@ -214,11 +306,30 @@ function ProjectDetails() {
           </Box>
 
           {/* Links */}
-          <Box sx={{ py: 8, px: 2 }}>
-            <Typography variant="h6" gutterBottom color="textSecondary">
+          <Box ref={linksRef} sx={{ py: 8, px: 2 }}>
+            <Typography
+              variant="h6"
+              gutterBottom
+              color="textSecondary"
+              sx={{
+                transform: areLinksVisible
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                opacity: areLinksVisible ? 1 : 0,
+                transition: "all 0.8s ease",
+              }}
+            >
               Links
             </Typography>
-            <Box>
+            <Box
+              sx={{
+                transform: areLinksVisible
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                opacity: areLinksVisible ? 1 : 0,
+                transition: "all 0.8s ease 0.2s",
+              }}
+            >
               {project.githubUrl && (
                 <Button
                   variant="outlined"
