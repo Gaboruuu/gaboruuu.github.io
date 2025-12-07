@@ -29,31 +29,32 @@ import { FaJava } from "react-icons/fa";
 import { TbSql, TbBrandCSharp } from "react-icons/tb";
 import Footer from "../components/Footer";
 
-const skillsData = [
-  // Programming Languages
-  { Icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-  { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-  { Icon: SiPython, name: "Python", color: "#3776AB" },
-  { Icon: FaJava, name: "Java", color: "#007396" },
-  { Icon: TbBrandCSharp, name: "C#", color: "#239120" },
-  { Icon: SiCplusplus, name: "C++", color: "#00599C" },
-  { Icon: SiC, name: "C lang", color: "#A8B9CC" },
-
-  // Frontend
-  { Icon: SiReact, name: "React", color: "#61DAFB" },
-  { Icon: SiHtml5, name: "HTML5", color: "#E34F26" },
-  { Icon: SiCss3, name: "CSS3", color: "#1572B6" },
-
-  // Backend & Frameworks
-  { Icon: SiNodedotjs, name: "Node.js", color: "#339933" },
-  { Icon: SiDotnet, name: ".NET", color: "#512BD4" },
-  { Icon: SiReact, name: "React Native", color: "#61DAFB" },
-  { Icon: SiQt, name: "Qt", color: "#41CD52" },
-
-  // Databases
-  { Icon: SiMysql, name: "MySQL", color: "#4479A1" },
-  { Icon: TbSql, name: "SQL", color: "#CC2927" },
-];
+const skillsCategories = {
+  "Programming Languages": [
+    { Icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
+    { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+    { Icon: SiPython, name: "Python", color: "#3776AB" },
+    { Icon: FaJava, name: "Java", color: "#007396" },
+    { Icon: TbBrandCSharp, name: "C#", color: "#239120" },
+    { Icon: SiCplusplus, name: "C++", color: "#00599C" },
+    { Icon: SiC, name: "C", color: "#A8B9CC" },
+  ],
+  "Frameworks & Libraries": [
+    { Icon: SiReact, name: "React", color: "#61DAFB" },
+    { Icon: SiReact, name: "React Native", color: "#61DAFB" },
+    { Icon: SiNodedotjs, name: "Node.js", color: "#339933" },
+    { Icon: SiDotnet, name: ".NET", color: "#512BD4" },
+    { Icon: SiQt, name: "Qt", color: "#41CD52" },
+  ],
+  "Web Technologies": [
+    { Icon: SiHtml5, name: "HTML5", color: "#E34F26" },
+    { Icon: SiCss3, name: "CSS3", color: "#1572B6" },
+  ],
+  Databases: [
+    { Icon: SiMysql, name: "MySQL", color: "#4479A1" },
+    { Icon: TbSql, name: "SQL", color: "#CC2927" },
+  ],
+};
 
 export default function Home() {
   const useScrollAnimation = () => {
@@ -337,7 +338,7 @@ export default function Home() {
             transform: areSkillsVisible ? "translateY(0)" : "translateY(20px)",
             opacity: areSkillsVisible ? 1 : 0,
             transition: "all 1s ease",
-            mb: 10,
+            mb: 6,
             fontSize: { xs: "2.5rem", sm: "2.5rem", md: "3rem" },
           }}
         >
@@ -345,51 +346,107 @@ export default function Home() {
         </AnimatedGradientText>
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 4,
-            flexWrap: "wrap",
-            maxWidth: "1000px",
+            maxWidth: "1200px",
             margin: "0 auto",
           }}
         >
-          {skillsData.map(({ Icon, name, color }, index) => (
-            <Card
-              variant="outlined"
-              key={index}
-              sx={{
-                width: { xs: 100, sm: 120, md: 140 },
-                height: { xs: 120, sm: 140, md: 160 },
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                bgcolor: "rgba(0, 0, 0, 0.5)",
-                transform: areSkillsVisible
-                  ? "translateY(0)"
-                  : "translateY(20px)",
-                opacity: areSkillsVisible ? 1 : 0,
-                transition: `all 0.5s ease ${index * 0.1}s`,
-                "@media (max-width: 600px)": {
-                  transition: `all 0.1s ease ${index * 0.1}s`,
-                },
-              }}
-            >
-              <CardContent sx={{ textAlign: "center" }}>
-                <Box sx={{ fontSize: { xs: "40px", sm: "50px", md: "64px" } }}>
-                  <Icon color={color} style={{ width: "1em", height: "1em" }} />
-                </Box>
+          {Object.entries(skillsCategories).map(
+            ([category, skills], categoryIndex) => (
+              <Box
+                key={category}
+                sx={{
+                  mb: 6,
+                  transform: areSkillsVisible
+                    ? "translateY(0)"
+                    : "translateY(20px)",
+                  opacity: areSkillsVisible ? 1 : 0,
+                  transition: `all 0.8s ease ${categoryIndex * 0.2}s`,
+                }}
+              >
                 <Typography
-                  variant="h6"
+                  variant="h5"
                   sx={{
-                    fontSize: { xs: "0.875rem", sm: "1rem", md: "1.25rem" },
+                    color: theme.palette.primary.main,
+                    textAlign: "center",
+                    mb: 3,
+                    fontWeight: 600,
+                    fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.75rem" },
                   }}
                 >
-                  {name}
+                  {category}
                 </Typography>
-              </CardContent>
-            </Card>
-          ))}
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: { xs: 2, sm: 3, md: 4 },
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {skills.map(({ Icon, name, color }, index) => (
+                    <Card
+                      variant="outlined"
+                      key={index}
+                      sx={{
+                        width: { xs: 90, sm: 110, md: 130 },
+                        height: { xs: 110, sm: 130, md: 150 },
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        bgcolor: "rgba(0, 0, 0, 0.5)",
+                        borderColor: "rgba(136, 0, 255, 0.3)",
+                        transform: areSkillsVisible
+                          ? "translateY(0) scale(1)"
+                          : "translateY(20px) scale(0.9)",
+                        opacity: areSkillsVisible ? 1 : 0,
+                        transition: `all 0.5s ease ${
+                          categoryIndex * 0.2 + index * 0.05
+                        }s`,
+                        "&:hover": {
+                          transform: "translateY(-8px) scale(1.05)",
+                          borderColor: theme.palette.primary.main,
+                          boxShadow: `0 8px 16px rgba(136, 0, 255, 0.3)`,
+                        },
+                        "@media (max-width: 600px)": {
+                          transition: `all 0.3s ease ${
+                            categoryIndex * 0.1 + index * 0.05
+                          }s`,
+                        },
+                      }}
+                    >
+                      <CardContent sx={{ textAlign: "center", p: 2 }}>
+                        <Box
+                          sx={{
+                            fontSize: { xs: "36px", sm: "48px", md: "56px" },
+                            mb: 1,
+                          }}
+                        >
+                          <Icon
+                            color={color}
+                            style={{ width: "1em", height: "1em" }}
+                          />
+                        </Box>
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            fontSize: {
+                              xs: "0.75rem",
+                              sm: "0.875rem",
+                              md: "1rem",
+                            },
+                            fontWeight: 500,
+                          }}
+                        >
+                          {name}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </Box>
+              </Box>
+            )
+          )}
         </Box>
       </Box>
     </Box>

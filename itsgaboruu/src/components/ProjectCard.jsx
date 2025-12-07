@@ -113,8 +113,8 @@ export default function ProjectCard({ project, variant = "default", sx }) {
                 fontSize: "0.7rem",
                 color: "#fff",
                 borderColor: "rgba(255, 255, 255, 0.3)",
-                border: "1px solid",
-                borderRadius: 2,
+                border: "0.1px solid",
+                // borderRadius: 2,
               }}
             >
               {tech}
