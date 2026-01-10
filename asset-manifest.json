@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1259a74c.css",
-    "main.js": "/static/js/main.589c6c04.js",
+    "main.js": "/static/js/main.1a795547.js",
     "static/media/hourglass_4.png": "/static/media/hourglass_4.9caa7fb7598189ebc83b.png",
     "static/media/hourglass_1.png": "/static/media/hourglass_1.f000c9de6576920115cb.png",
     "static/media/hourglass_3.png": "/static/media/hourglass_3.c7be8d1002c6aa007daf.png",
@@ -282,10 +282,10 @@
     "static/media/pe.svg": "/static/media/pe.d64e9732fcaa8f765994.svg",
     "static/media/id.svg": "/static/media/id.f624e2c8444a7794b357.svg",
     "main.1259a74c.css.map": "/static/css/main.1259a74c.css.map",
-    "main.589c6c04.js.map": "/static/js/main.589c6c04.js.map"
+    "main.1a795547.js.map": "/static/js/main.1a795547.js.map"
   },
   "entrypoints": [
     "static/css/main.1259a74c.css",
-    "static/js/main.589c6c04.js"
+    "static/js/main.1a795547.js"
   ]
 }
