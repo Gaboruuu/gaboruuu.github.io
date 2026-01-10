@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box, ThemeProvider, CssBaseline } from "@mui/material";
-import theme from "./theme";
+import { createAppTheme } from "./theme";
+import { ThemeContextProvider, useThemeMode } from "./context/ThemeContext";
+import "./i18n";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
@@ -10,7 +12,10 @@ import Contact from "./pages/Contact";
 import ParticleBackground from "./components/ParticleBackground";
 import Footer from "./components/Footer";
 
-function App() {
+function AppContent() {
+  const { mode, palette } = useThemeMode();
+  const theme = useMemo(() => createAppTheme(mode, palette), [mode, palette]);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -49,6 +54,14 @@ function App() {
         </Box>
       </Router>
     </ThemeProvider>
+  );
+}
+
+function App() {
+  return (
+    <ThemeContextProvider>
+      <AppContent />
+    </ThemeContextProvider>
   );
 }
 

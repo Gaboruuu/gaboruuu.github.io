@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import projectsData from "../data/projectsData";
 import ProjectCard from "../components/ProjectCard";
-import theme from "../theme";
 import ProjectsSection from "../components/ProjectsSection";
 
 function Projects() {
+  const theme = useTheme();
+  const { t } = useTranslation();
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
   useEffect(() => {
     setAreProjectsVisible(true);
@@ -25,7 +27,7 @@ function Projects() {
           color: theme.palette.primary.main,
         }}
       >
-        My Projects
+        {t("projects.title")}
       </Typography>
       <Typography
         variant="h6"
@@ -38,7 +40,7 @@ function Projects() {
           transition: "all 0.5s ease 0.2s",
         }}
       >
-        A list of all my projects, from web development to mobile apps and more.
+        {t("projects.subtitle")}
       </Typography>
       <Box sx={{ maxWidth: 1200, margin: "0 auto" }}>
         <ProjectsSection

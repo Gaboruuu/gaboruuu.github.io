@@ -1,15 +1,19 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import theme from "../theme";
+import { Box, Typography, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const theme = useTheme();
+  const { t } = useTranslation();
   return (
     <Box
       component="footer"
       sx={{
         mt: 16,
         py: 4,
-        border: `1px solid rgba(48, 48, 48, 0.8)`,
+        border: `1px solid ${
+          theme.palette.divider || "rgba(255, 255, 255, 0.12)"
+        }`,
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
@@ -33,7 +37,7 @@ export default function Footer() {
           align="center"
           sx={{ px: 2 }}
         >
-          © {new Date().getFullYear()} | All rights reserved.
+          © {new Date().getFullYear()} | {t("footer.rights")}
         </Typography>
       </Box>
       <Box
@@ -51,7 +55,7 @@ export default function Footer() {
           }}
         >
           <Typography variant="body1" color="textPrimary" sx={{ mb: 2 }}>
-            Navigation
+            {t("footer.navigation")}
           </Typography>
           <Typography
             variant="body2"
@@ -65,7 +69,7 @@ export default function Footer() {
               window.location.href = "/";
             }}
           >
-            Home
+            {t("nav.home")}
           </Typography>
           <Typography
             variant="body2"
@@ -79,7 +83,7 @@ export default function Footer() {
               window.location.href = "/projects";
             }}
           >
-            Projects
+            {t("nav.projects")}
           </Typography>
         </Box>
 
@@ -92,7 +96,7 @@ export default function Footer() {
           }}
         >
           <Typography variant="body1" color="textPrimary" sx={{ mb: 2 }}>
-            Contact
+            {t("footer.contact")}
           </Typography>
           <Typography
             variant="body2"
@@ -137,7 +141,7 @@ export default function Footer() {
               window.location.href = "mailto:gabriel.gabor2016@gmail.com";
             }}
           >
-            Email
+            {t("footer.email")}
           </Typography>
         </Box>
       </Box>

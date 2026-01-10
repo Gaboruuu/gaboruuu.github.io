@@ -6,14 +6,17 @@ import {
   IconButton,
   Button,
   Paper,
+  useTheme,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import projectsData from "../data/projectsData";
-import theme from "../theme";
 import { useState, useEffect, useRef } from "react";
 import { Close, CheckCircle } from "@mui/icons-material";
 
 function ProjectDetails() {
+  const theme = useTheme();
+  const { t } = useTranslation();
   const params = useParams();
   const project = projectsData.find((p) => p.link === `/projects/${params.id}`);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -102,7 +105,7 @@ function ProjectDetails() {
                 transition: "all 0.8s ease",
               }}
             >
-              What is this project about?
+              {t("projectDetails.whatIsThis")}
             </Typography>
             <Box
               sx={{
@@ -156,7 +159,7 @@ function ProjectDetails() {
                 transition: "all 0.8s ease",
               }}
             >
-              Technologies Used
+              {t("projectDetails.technologies")}
             </Typography>
             <Box
               sx={{
@@ -176,7 +179,7 @@ function ProjectDetails() {
                     py: 1,
                     borderRadius: 1,
                     backgroundColor: theme.palette.primary.main,
-                    color: "#fff",
+                    color: theme.palette.background.default,
                     fontSize: "0.875rem",
                     fontWeight: "bold",
                   }}
@@ -204,7 +207,7 @@ function ProjectDetails() {
                 transition: "all 0.8s ease",
               }}
             >
-              Key Features
+              {t("projectDetails.keyFeatures")}
             </Typography>
             <Box
               sx={{
@@ -225,7 +228,8 @@ function ProjectDetails() {
                     p: 2,
                     display: "flex",
                     alignItems: "flex-start",
-                    bgcolor: "rgba(0, 0, 0, 0.05)",
+                    bgcolor: theme.palette.background.paper,
+                    border: `1px solid ${theme.palette.divider}`,
                     gap: 1.5,
                     transform: areFeaturesVisible
                       ? "translateY(0) scale(1)"
@@ -272,7 +276,7 @@ function ProjectDetails() {
                 transition: "all 0.8s ease",
               }}
             >
-              Gallery / Screenshots
+              {t("projectDetails.gallery")}
             </Typography>
             <Box
               sx={{
@@ -319,7 +323,7 @@ function ProjectDetails() {
                 transition: "all 0.8s ease",
               }}
             >
-              Links
+              {t("projectDetails.links")}
             </Typography>
             <Box
               sx={{
@@ -345,16 +349,14 @@ function ProjectDetails() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub
+                  {t("projectDetails.github")}
                 </Button>
               )}
             </Box>
           </Box>
         </Box>
       ) : (
-        <Typography variant="h6">
-          Project not found or not available.
-        </Typography>
+        <Typography variant="h6">{t("projectDetails.notFound")}</Typography>
       )}
 
       {/* Fullscreen Image Dialog */}

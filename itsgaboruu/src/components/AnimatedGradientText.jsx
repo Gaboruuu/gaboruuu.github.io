@@ -1,17 +1,28 @@
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 
 export default function AnimatedGradientText({
   variant = "h3",
   children,
   sx = {},
-  colors = {},
+  colors,
   ...props
 }) {
+  const theme = useTheme();
+
+  // Default colors based on theme if not provided
+  const defaultColors = {
+    start: theme.palette.primary.main,
+    middle: theme.palette.primary.light,
+    end: theme.palette.primary.main,
+  };
+
+  const gradientColors = colors || defaultColors;
+
   return (
     <Typography
       variant={variant}
       sx={{
-        background: `linear-gradient(90deg, ${colors.start} 0%, ${colors.middle} 50%, ${colors.end} 100%)`,
+        background: `linear-gradient(90deg, ${gradientColors.start} 0%, ${gradientColors.middle} 50%, ${gradientColors.end} 100%)`,
         backgroundSize: "200% auto",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",

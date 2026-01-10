@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Software developer",
+    "subtitle": "Student",
+    "location": "Based in Romania",
+    "contactButton": "Contact Me",
+    "downloadCV": "Download CV",
+    "featuredProjects": "Featured Projects",
+    "featuredProjectsDesc": "A selection of my recent work showcasing my skills and experience.",
+    "skillsTitle": "My Skills & Technologies",
+    "skillsDesc": "Technologies and tools I've worked with across various projects"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "A list of all my projects, from web development to mobile apps and more."
+  },
+  "projectDetails": {
+    "whatIsThis": "What is this project about?",
+    "technologies": "Technologies Used",
+    "keyFeatures": "Key Features",
+    "gallery": "Gallery / Screenshots",
+    "links": "Links",
+    "github": "GitHub",
+    "notFound": "Project not found or not available."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "email": "Email"
+  },
+  "skills": {
+    "categories": {
+      "Frontend": "Frontend",
+      "Languages": "Languages",
+      "Backend": "Backend",
+      "Mobile": "Mobile",
+      "Desktop": "Desktop",
+      "Database": "Database"
+    }
+  }
+}

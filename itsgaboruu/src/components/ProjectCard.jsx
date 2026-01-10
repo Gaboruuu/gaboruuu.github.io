@@ -5,27 +5,30 @@ import {
   CardActions,
   Typography,
   Box,
+  useTheme,
 } from "@mui/material";
-import theme from "../theme";
-
-// Define variant styles
-const variantStyles = {
-  default: {
-    background: "rgba(27, 27, 27, 0.8)",
-    height: 350,
-    "&:hover": {
-      transform: "translateY(-8px)",
-      transition: "all 0.3s ease",
-    },
-  },
-  featured: {
-    background: "rgba(27, 27, 27, 0.5)",
-    border: "1px solid rgba(255, 255, 255, 0.5)",
-    height: 300,
-  },
-};
 
 export default function ProjectCard({ project, variant = "default", sx }) {
+  const theme = useTheme();
+
+  // Define variant styles
+  const variantStyles = {
+    default: {
+      background: theme.palette.background.paper,
+      height: 350,
+      "&:hover": {
+        transform: "translateY(-8px)",
+        transition: "all 0.3s ease",
+        boxShadow: `0 8px 32px 0 ${theme.palette.primary.main}40`,
+      },
+    },
+    featured: {
+      background: theme.palette.background.paper,
+      border: `1px solid ${theme.palette.divider}`,
+      height: 300,
+    },
+  };
+
   return (
     <Card
       sx={{
@@ -85,12 +88,18 @@ export default function ProjectCard({ project, variant = "default", sx }) {
       >
         <Typography
           variant="h6"
-          sx={{ color: "#fff", mb: variant === "featured" ? 1 : 0 }}
+          sx={{
+            color: theme.palette.text.primary,
+            mb: variant === "featured" ? 1 : 0,
+          }}
         >
           {project.title}
         </Typography>
         {variant !== "featured" && (
-          <Typography variant="body2" sx={{ color: "#bbbbbb" }}>
+          <Typography
+            variant="body2"
+            sx={{ color: theme.palette.text.secondary }}
+          >
             {project.descriptionShort}
           </Typography>
         )}
@@ -111,10 +120,9 @@ export default function ProjectCard({ project, variant = "default", sx }) {
                 px: 1,
                 py: 0.3,
                 fontSize: "0.7rem",
-                color: "#fff",
-                borderColor: "rgba(255, 255, 255, 0.3)",
-                border: "0.1px solid",
-                // borderRadius: 2,
+                color: theme.palette.text.primary,
+                borderColor: theme.palette.primary.main,
+                border: "1px solid",
               }}
             >
               {tech}

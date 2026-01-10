@@ -1,5 +1,13 @@
-import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import Aurora from "../components/Aurora";
 import AnimatedGradientText from "../components/AnimatedGradientText";
 import { Avatar } from "@mui/material";
@@ -66,6 +74,8 @@ const skillsData = [
 ];
 
 export default function Home() {
+  const theme = useTheme();
+  const { t } = useTranslation();
   const useScrollAnimation = () => {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef(null);
@@ -143,15 +153,21 @@ export default function Home() {
                 width: { xs: 80, sm: 90, md: 100 },
                 height: { xs: 80, sm: 90, md: 100 },
                 borderRadius: "50%",
-                border: `2px solid white`,
+                border: `2px solid ${theme.palette.primary.main}`,
               }}
             ></Avatar>
             <Box sx={{ textAlign: "left" }}>
-              <Typography variant="h5" sx={{ color: "#fff" }}>
+              <Typography
+                variant="h5"
+                sx={{ color: theme.palette.text.primary }}
+              >
                 Gabor Gabriel
               </Typography>
-              <Typography variant="body2" sx={{ color: "#fff" }}>
-                <span className="fi fi-ro"></span> Based in Romania
+              <Typography
+                variant="body2"
+                sx={{ color: theme.palette.text.primary }}
+              >
+                <span className="fi fi-ro"></span> {t("home.location")}
               </Typography>
             </Box>
           </Box>
@@ -159,13 +175,13 @@ export default function Home() {
             <Typography
               variant="h2"
               sx={{
-                color: "#fff",
+                color: theme.palette.text.primary,
                 textTransform: "uppercase",
                 fontFamily: "Arial Black",
                 fontSize: { xs: "40px", sm: "3.5rem", md: "72px" },
               }}
             >
-              Software developer
+              {t("home.title")}
             </Typography>
             <Box
               sx={{
@@ -185,7 +201,7 @@ export default function Home() {
                   fontSize: { xs: "40px", sm: "56px", md: "72px" },
                 }}
               >
-                Student
+                {t("home.subtitle")}
               </Typography>
             </Box>
           </Box>
@@ -266,32 +282,33 @@ export default function Home() {
               href="mailto:gabriel.gabor2016@gmail.com"
               variant="outlined"
               sx={{
-                color: "#fff",
-                borderColor: "#fff",
+                color: theme.palette.text.primary,
+                borderColor: theme.palette.primary.main,
                 borderRadius: 3,
                 px: 3,
                 "&:hover": {
                   transform: "scale(1.05)",
                   boxShadow: `0 0 20px ${theme.palette.primary.main}`,
+                  borderColor: theme.palette.primary.light,
                 },
                 transition: "all 0.3s ease",
               }}
             >
-              Contact Me
+              {t("home.contactButton")}
             </Button>
 
             <Button
               variant="text"
               sx={{
-                color: "#fff",
+                color: theme.palette.text.primary,
                 "&:hover": {
-                  color: theme.palette.text.disabled,
+                  color: theme.palette.text.secondary,
                 },
                 transition: "all 0.3s ease",
               }}
             >
               <Download sx={{ mr: 1 }} />
-              Download CV
+              {t("home.downloadCV")}
             </Button>
           </Box>
         </Box>
@@ -316,7 +333,7 @@ export default function Home() {
             transition: "all 1s ease",
           }}
         >
-          Featured Projects
+          {t("home.featuredProjects")}
         </AnimatedGradientText>
         <Typography
           variant="body1"
@@ -334,7 +351,7 @@ export default function Home() {
             transition: "all 1s ease",
           }}
         >
-          A selection of my recent work showcasing my skills and experience.
+          {t("home.featuredProjectsDesc")}
         </Typography>
         <ProjectsSection
           areProjectsVisible={areProjectsVisible}
@@ -371,7 +388,7 @@ export default function Home() {
             fontSize: { xs: "2.5rem", sm: "2.5rem", md: "3rem" },
           }}
         >
-          My Skills & Technologies
+          {t("home.skillsTitle")}
         </AnimatedGradientText>
         <Typography
           variant="body1"
@@ -387,7 +404,7 @@ export default function Home() {
             transition: "all 1s ease 0.2s",
           }}
         >
-          Technologies and tools I've worked with across various projects
+          {t("home.skillsDesc")}
         </Typography>
         <Box
           sx={{
@@ -414,9 +431,9 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                background: "rgba(20, 20, 20, 0.6)",
+                background: theme.palette.background.paper,
                 backdropFilter: "blur(10px)",
-                border: "1px solid rgba(136, 0, 255, 0.2)",
+                border: `1px solid ${theme.palette.primary.main}40`,
                 borderRadius: 3,
                 position: "relative",
                 overflow: "hidden",
@@ -499,7 +516,7 @@ export default function Home() {
                     mt: 0.5,
                   }}
                 >
-                  {category}
+                  {t(`skills.categories.${category}`)}
                 </Typography>
               </CardContent>
             </Card>

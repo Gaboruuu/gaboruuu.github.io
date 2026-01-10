@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "projects": "Proiecte",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Dezvoltator software",
+    "subtitle": "Student",
+    "location": "Cu baza în România",
+    "contactButton": "Contactează-mă",
+    "downloadCV": "Descarcă CV",
+    "featuredProjects": "Proiecte Recomandate",
+    "featuredProjectsDesc": "O selecție a proiectelor mele recente care îmi prezintă abilitățile și experiența.",
+    "skillsTitle": "Abilitățile & Tehnologiile Mele",
+    "skillsDesc": "Tehnologii și instrumente cu care am lucrat în diverse proiecte"
+  },
+  "projects": {
+    "title": "Proiectele Mele",
+    "subtitle": "O listă cu toate proiectele mele, de la dezvoltare web la aplicații mobile și multe altele."
+  },
+  "projectDetails": {
+    "whatIsThis": "Despre ce este acest proiect?",
+    "technologies": "Tehnologii Utilizate",
+    "keyFeatures": "Caracteristici Principale",
+    "gallery": "Galerie / Capturi de Ecran",
+    "links": "Linkuri",
+    "github": "GitHub",
+    "notFound": "Proiectul nu a fost găsit sau nu este disponibil."
+  },
+  "footer": {
+    "rights": "Toate drepturile rezervate.",
+    "navigation": "Navigare",
+    "contact": "Contact",
+    "email": "Email"
+  },
+  "skills": {
+    "categories": {
+      "Frontend": "Frontend",
+      "Languages": "Limbaje",
+      "Backend": "Backend",
+      "Mobile": "Mobil",
+      "Desktop": "Desktop",
+      "Database": "Baze de Date"
+    }
+  }
+}
