@@ -35,10 +35,7 @@ const Header = () => {
       variant="outlined"
       elevation={0}
       sx={{
-        backgroundColor:
-          theme.palette.mode === "dark"
-            ? "rgba(0, 0, 0, 0.9)"
-            : "rgba(255, 255, 255, 0.9)",
+        backgroundColor: theme.palette.background.default,
         backdropFilter: "blur(10px)",
         display: "flex",
         justifyContent: "center",
@@ -79,6 +76,8 @@ const Header = () => {
                 fontSize: "1rem",
                 textTransform: "none",
                 backgroundColor: "transparent",
+                minWidth: { xs: "50px", sm: "64px" },
+                px: { xs: 0.5, sm: 2 },
                 "&:hover": {
                   color: theme.palette.primary.main,
                 },
@@ -96,7 +95,7 @@ const Header = () => {
             sx={{
               borderLeft: `1px solid ${theme.palette.divider}`,
               height: 24,
-              mx: 1,
+              mx: { xs: 0.5, sm: 1 },
             }}
           />
           <ThemeToggle />
