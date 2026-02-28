@@ -5,9 +5,10 @@
     "contact": "Contact"
   },
   "home": {
-    "title": "Software developer",
-    "subtitle": "Student",
+    "title": "Software Engineer",
+    "subtitle": "CS Student",
     "location": "Based in Romania",
+    "description": "I engineer scalable software solutions across diverse platforms. Driven by a strong foundation in computer science and a rapid learning curve, I focus on turning complex requirements into clean, maintainable, and high-performing products.",
     "contactButton": "Contact Me",
     "downloadCV": "Download CV",
     "featuredProjects": "Featured Projects",
