@@ -13,6 +13,7 @@ import AnimatedGradientText from "../components/AnimatedGradientText";
 import { Avatar } from "@mui/material";
 import theme from "../theme";
 import me from "../assets/images/me_bg.png";
+import cvPdf from "../assets/Gabor-Gabriel-CV.pdf";
 import "flag-icons/css/flag-icons.min.css";
 import { useState, useEffect } from "react";
 import { GitHub, LinkedIn, Download } from "@mui/icons-material";
@@ -346,6 +347,9 @@ export default function Home() {
                 </Button>
 
                 <Button
+                  component="a"
+                  href={cvPdf}
+                  download="Gabriel-Gabor-CV.pdf"
                   variant="outlined"
                   sx={{
                     color: theme.palette.text.primary,
