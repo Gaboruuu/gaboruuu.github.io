@@ -9,30 +9,6 @@ import hourglass_4 from "../assets/images/projects/hourglass_4.png";
 const projectsData = [
   {
     id: 1,
-    link: "/projects/project-vault",
-    title: "Project Vault",
-    descriptionShort:
-      "A early verion of a personal portfolio website to showcase my projects and skills.",
-    descriptionLong: [
-      "Project Vault is the early version of my personal portfolio website designed to showcase my projects, skills, and experience as a developer. The website features a clean and modern design, with easy navigation and responsive layout to ensure optimal viewing on all devices.",
-      "Its initial purpose was to familiarize myself with React and Material-UI, while also providing a platform to present my work to potential employers and collaborators.",
-      "It later only served as a foundation for the current website you are browsing right now.",
-    ],
-    technologies: ["React", "Material-UI", "JavaScript", "CSS"],
-    thumbnail: projectvault_thumbnail,
-    keyFeatures: [
-      "Responsive design for all devices",
-      "Clean and modern UI",
-      "Project showcase",
-    ],
-    images: [placeholderImg, placeholderImg, placeholderImg, placeholderImg],
-    githubUrl: "https://github.com/Gaboruuu/Project-Vault-Redesign",
-    liveUrl: "",
-    featured: true,
-    category: "web",
-  },
-  {
-    id: 2,
     link: "/projects/hourglass",
     title: "Hourglass",
     descriptionShort:
@@ -62,6 +38,31 @@ const projectsData = [
       "Cross-platform compatibility (iOS and Android)",
     ],
   },
+  {
+    id: 2,
+    link: "/projects/project-vault",
+    title: "Project Vault",
+    descriptionShort:
+      "A early verion of a personal portfolio website to showcase my projects and skills.",
+    descriptionLong: [
+      "Project Vault is the early version of my personal portfolio website designed to showcase my projects, skills, and experience as a developer. The website features a clean and modern design, with easy navigation and responsive layout to ensure optimal viewing on all devices.",
+      "Its initial purpose was to familiarize myself with React and Material-UI, while also providing a platform to present my work to potential employers and collaborators.",
+      "It later only served as a foundation for the current website you are browsing right now.",
+    ],
+    technologies: ["React", "Material-UI", "JavaScript", "CSS"],
+    thumbnail: projectvault_thumbnail,
+    keyFeatures: [
+      "Responsive design for all devices",
+      "Clean and modern UI",
+      "Project showcase",
+    ],
+    images: [placeholderImg, placeholderImg, placeholderImg, placeholderImg],
+    githubUrl: "https://github.com/Gaboruuu/Project-Vault-Redesign",
+    liveUrl: "",
+    featured: true,
+    category: "web",
+  },
+
   {
     id: 3,
     link: "/projects/battle-ship",
@@ -115,6 +116,37 @@ const projectsData = [
       "Lightweight and efficient",
       "Export movie list to CSV and HTML",
       "Search and filter movies",
+    ],
+  },
+  {
+    id: 5,
+    link: "/projects/interpreter",
+    title: "Toy Language Interpreter",
+    descriptionShort:
+      "A fully functional interpreter for a custom toy programming language, built in Java with a JavaFX GUI.",
+    descriptionLong: [
+      "This interpreter executes programs written in a custom toy language, supporting variable declarations, arithmetic and logical expressions, conditional statements, loops, and heap memory management with garbage collection.",
+      "The project implements a multi-threaded execution model using Java's ExecutorService, where programs can spawn new threads via a fork statement. Each thread has its own execution stack and symbol table, while sharing a common heap, output buffer, and lock table for mutual exclusion.",
+      "Built with a clean MVC architecture, the application features a JavaFX GUI that lets users select from predefined programs and step through their execution, observing the state of the execution stack, symbol table, heap, and output in real time.",
+    ],
+    technologies: ["Java", "JavaFX", "MVC"],
+    thumbnail: placeholderImg,
+    images: [placeholderImg, placeholderImg],
+    githubUrl: "https://github.com/Gaboruuu/Interpreter",
+    liveUrl: "",
+    featured: false,
+    category: "desktop",
+    keyFeatures: [
+      "Custom toy language execution",
+      "Multi-threaded program states via fork",
+      "Heap memory with garbage collection",
+      "Type checking before execution",
+      "Lock/unlock synchronization primitives",
+      "File I/O support",
+      "Step-by-step execution in GUI",
+      "Real-time state visualization",
+      "18 statement types",
+      "Program selector with multiple examples",
     ],
   },
 ];
