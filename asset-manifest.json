@@ -1,23 +1,31 @@
 {
   "files": {
     "main.css": "/static/css/main.1259a74c.css",
-    "main.js": "/static/js/main.c647ff64.js",
+    "main.js": "/static/js/main.51fabd89.js",
     "static/media/hourglass_4.png": "/static/media/hourglass_4.9caa7fb7598189ebc83b.png",
     "static/media/hourglass_1.png": "/static/media/hourglass_1.f000c9de6576920115cb.png",
+    "static/media/battleship_thumbnail.png": "/static/media/battleship_thumbnail.484275429f9ef63515cb.png",
     "static/media/hourglass_3.png": "/static/media/hourglass_3.c7be8d1002c6aa007daf.png",
     "static/media/hourglass_2.png": "/static/media/hourglass_2.3efe3dca5dc821677104.png",
     "static/media/hourglass_thumbnail.png": "/static/media/hourglass_thumbnail.e973a319532257f7f0cc.png",
+    "static/media/lmqt_2.png": "/static/media/lmqt_2.ed4c4e1027fe6ca50be1.png",
+    "static/media/lmqt_thumbnail.png": "/static/media/lmqt_thumbnail.fbaba4f6ea7152d297c7.png",
+    "static/media/lmqt_1.png": "/static/media/lmqt_1.66e25a84a774082ebef5.png",
     "static/media/projectvault_thumbnail_dark.png": "/static/media/projectvault_thumbnail_dark.03df6bb2736ce2288aa2.png",
+    "static/media/battleship_2.png": "/static/media/battleship_2.b8f58361e8981710c220.png",
     "static/media/rs.svg": "/static/media/rs.099fd9d4031b066a2362.svg",
     "static/media/sh-ac.svg": "/static/media/sh-ac.12e47249c910761e397d.svg",
     "static/media/Gabor-Gabriel-CV.pdf": "/static/media/Gabor-Gabriel-CV.982116c5e22653e71885.pdf",
+    "static/media/battleship_1.png": "/static/media/battleship_1.99b1d98201166ac6d103.png",
     "static/media/me_bg.png": "/static/media/me_bg.54bea44ab9df85189588.png",
     "static/media/bo.svg": "/static/media/bo.b0f50bc8035200c269f1.svg",
     "static/media/mx.svg": "/static/media/mx.b2ba7a3bf813d512f807.svg",
     "static/media/es.svg": "/static/media/es.c2bea6d740c5d81d5bce.svg",
     "static/media/sv.svg": "/static/media/sv.79fbc03fce7cd1c8802f.svg",
+    "static/media/battleship_4.png": "/static/media/battleship_4.dfc1adfdaafedd0bd492.png",
     "static/media/me.svg": "/static/media/me.2e1e72f3094e36ac941f.svg",
     "static/media/bz.svg": "/static/media/bz.d6efb8bf4f72e304256a.svg",
+    "static/media/battleship_3.png": "/static/media/battleship_3.f3d48077170d36088f22.png",
     "static/media/do.svg": "/static/media/do.5b6684f3d0630d4bcec4.svg",
     "static/media/tm.svg": "/static/media/tm.613323bc56fcd8b1bd79.svg",
     "static/media/sh-hl.svg": "/static/media/sh-hl.a28e46fcd71bb0cdc7cb.svg",
@@ -283,10 +291,10 @@
     "static/media/pe.svg": "/static/media/pe.d64e9732fcaa8f765994.svg",
     "static/media/id.svg": "/static/media/id.f624e2c8444a7794b357.svg",
     "main.1259a74c.css.map": "/static/css/main.1259a74c.css.map",
-    "main.c647ff64.js.map": "/static/js/main.c647ff64.js.map"
+    "main.51fabd89.js.map": "/static/js/main.51fabd89.js.map"
   },
   "entrypoints": [
     "static/css/main.1259a74c.css",
-    "static/js/main.c647ff64.js"
+    "static/js/main.51fabd89.js"
   ]
 }
