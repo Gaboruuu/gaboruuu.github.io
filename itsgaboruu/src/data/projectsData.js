@@ -5,6 +5,9 @@ import hourglass_1 from "../assets/images/projects/hourglass_1.png";
 import hourglass_2 from "../assets/images/projects/hourglass_2.png";
 import hourglass_3 from "../assets/images/projects/hourglass_3.png";
 import hourglass_4 from "../assets/images/projects/hourglass_4.png";
+import lmqt_thumbnail from "../assets/images/projects/lmqt_thumbnail.png";
+import lmqt_1 from "../assets/images/projects/lmqt_1.png";
+import lmqt_2 from "../assets/images/projects/lmqt_2.png";
 
 const projectsData = [
   {
@@ -101,8 +104,8 @@ const projectsData = [
       "While the application is functional, it is primarily a learning project to enhance my skills in C++ and Qt development.",
     ],
     technologies: ["C++", "Qt"],
-    thumbnail: placeholderImg,
-    images: ["/images/portfolio1.png", "/images/portfolio2.png"],
+    thumbnail: lmqt_thumbnail,
+    images: [lmqt_1, lmqt_2],
     githubUrl: "https://github.com/Gaboruuu/LocalMovieQT",
     liveUrl: "",
     featured: true,
