@@ -8,6 +8,11 @@ import hourglass_4 from "../assets/images/projects/hourglass_4.png";
 import lmqt_thumbnail from "../assets/images/projects/lmqt_thumbnail.png";
 import lmqt_1 from "../assets/images/projects/lmqt_1.png";
 import lmqt_2 from "../assets/images/projects/lmqt_2.png";
+import battle_ship_thumbnail from "../assets/images/projects/battleship_thumbnail.png";
+import battle_ship_1 from "../assets/images/projects/battleship_1.png";
+import battle_ship_2 from "../assets/images/projects/battleship_2.png";
+import battle_ship_3 from "../assets/images/projects/battleship_3.png";
+import battle_ship_4 from "../assets/images/projects/battleship_4.png";
 
 const projectsData = [
   {
@@ -78,8 +83,8 @@ const projectsData = [
       "The game is played agains a simple implemented AI.",
     ],
     technologies: ["Python", "Pygame"],
-    thumbnail: placeholderImg,
-    images: ["/images/portfolio1.png", "/images/portfolio2.png"],
+    thumbnail: battle_ship_thumbnail,
+    images: [battle_ship_1, battle_ship_2, battle_ship_3, battle_ship_4],
     githubUrl: "https://github.com/Gaboruuu/Battle-Ship",
     liveUrl: "",
     featured: false,
